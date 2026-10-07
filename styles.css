@@ -6,6 +6,27 @@
     box-sizing: border-box;
 }
 
+/* ------------------------------
+   BRAND COLORS
+------------------------------ */
+
+:root {
+    --green: #087a36;
+    --bright-green: #39e75f;
+    --dark-green: #062e18;
+    --deep-green: #0b3d20;
+
+    --background: #f5f7f5;
+    --white: #ffffff;
+    --black: #111111;
+
+    --text: #1a1a1a;
+    --muted-text: #555555;
+
+    --light-green-bg: #f4faf6;
+    --light-border: #dce9df;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -13,8 +34,8 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f7f5;
-    color: #1a1a1a;
+    background-color: var(--background);
+    color: var(--text);
     line-height: 1.6;
 }
 
@@ -26,11 +47,11 @@ body {
     background:
         linear-gradient(
             135deg,
-            #062e18,
-            #087a36
+            var(--dark-green),
+            var(--green)
         );
 
-    color: white;
+    color: var(--white);
 }
 
 
@@ -58,17 +79,60 @@ body {
 /* BUSINESS LOGO / NAME */
 
 .logo {
-    color: white;
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--white);
 
     text-decoration: none;
 
-    font-size: 1.2rem;
+    font-size: 1.15rem;
 
     font-weight: bold;
 
     letter-spacing: 0.5px;
 }
 
+
+.logo-main {
+    color: var(--white);
+}
+
+
+.logo-accent {
+    color: var(--bright-green);
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--bright-green);
+
+    color: var(--dark-green);
+
+    border-radius: 8px;
+
+    font-weight: 800;
+
+    font-size: 1.1rem;
+}
+
+
+.logo-text {
+    display: flex;
+
+    gap: 6px;
+}
 
 /* NAVIGATION LINKS */
 
@@ -81,7 +145,7 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: var(--white);
 
     text-decoration: none;
 
@@ -91,14 +155,14 @@ body {
 }
 
 .nav-links a:hover {
-    color: #39e75f;
+    color: var(--bright-green);
 }
 
 
 /* NAV CONTACT BUTTON */
 
 .nav-contact-button {
-    background-color: #39e75f;
+    background-color: var(--bright-green);
 
     color: #072511;
 
@@ -116,7 +180,7 @@ body {
 }
 
 .nav-contact-button:hover {
-    background-color: white;
+    background-color: var(--white);
 
     transform: translateY(-2px);
 }
@@ -239,13 +303,13 @@ body {
 /* PRIMARY BUTTON */
 
 .button-primary {
-    background-color: #39e75f;
+    background-color: var(--bright-green);
 
-    color: #062e18;
+    color: var(--dark-green);
 }
 
 .button-primary:hover {
-    background-color: white;
+    background-color: var(--white);
 }
 
 
@@ -254,13 +318,13 @@ body {
 .button-secondary {
     border: 2px solid white;
 
-    color: white;
+    color: var(--white);
 }
 
 .button-secondary:hover {
-    background-color: white;
+    background-color: var(--white);
 
-    color: #062e18;
+    color: var(--dark-green);
 }
 
 
@@ -303,7 +367,7 @@ main {
 ------------------------------ */
 
 section {
-    background-color: white;
+    background-color: var(--white);
 
     padding: 35px;
     margin-bottom: 30px;
@@ -315,13 +379,13 @@ section {
 }
 
 section h2 {
-    color: #087a36;
+    color: var(--green);
     font-size: 2rem;
     margin-top: 0;
 }
 
 section h3 {
-    color: #0b3d20;
+    color: var(--deep-green);
 }
 
 /* ------------------------------
@@ -387,7 +451,7 @@ textarea {
 input:focus,
 textarea:focus {
     outline: 2px solid #39e75f;
-    border-color: #087a36;
+    border-color: var(--green);
 }
 
 
@@ -395,28 +459,37 @@ textarea:focus {
    FORM BUTTON
 ------------------------------ */
 
-button {
-    background-color: #087a36;
-    color: white;
+.quote-submit-button {
+    width: 100%;
+
+    background-color: var(--green);
+
+    color: var(--white);
 
     border: none;
 
-    padding: 14px 20px;
+    padding: 15px 20px;
 
     margin-top: 20px;
 
-    font-size: 1rem;
+    font-size: 1.05rem;
+
     font-weight: bold;
 
     border-radius: 7px;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition:
+        background-color 0.2s,
+        transform 0.2s;
 }
 
-button:hover {
-    background-color: #0b3d20;
+
+.quote-submit-button:hover {
+    background-color: var(--dark-green);
+
+    transform: translateY(-2px);
 }
 
 
@@ -425,9 +498,9 @@ button:hover {
 ------------------------------ */
 
 .site-footer {
-    background-color: #111111;
+    background-color: var(--black);
 
-    color: white;
+    color: var(--white);
 
     padding:
         50px
@@ -456,7 +529,7 @@ button:hover {
 
 
 .footer-column h3 {
-    color: white;
+    color: var(--white);
 
     margin-top: 0;
 
@@ -490,7 +563,7 @@ button:hover {
 
 
 .footer-column a:hover {
-    color: #39e75f;
+    color: var(--bright-green);
 }
 
 
@@ -534,7 +607,7 @@ button:hover {
 .section-intro {
     max-width: 700px;
     margin: 0 auto 30px;
-    color: #555555;
+    color: var(--muted-text);
 }
 
 
@@ -622,7 +695,7 @@ button:hover {
 
     left: 0;
 
-    color: #087a36;
+    color: var(--green);
 
     font-weight: bold;
 }
@@ -635,9 +708,9 @@ button:hover {
 .service-button {
     display: inline-block;
 
-    background-color: #087a36;
+    background-color: var(--green);
 
-    color: white;
+    color: var(--white);
 
     text-decoration: none;
 
@@ -651,7 +724,7 @@ button:hover {
 }
 
 .service-button:hover {
-    background-color: #0b3d20;
+    background-color: var(--deep-green);
 
     transform: translateY(-2px);
 }
@@ -725,9 +798,9 @@ button:hover {
         auto
         20px;
 
-    background-color: #087a36;
+    background-color: var(--green);
 
-    color: white;
+    color: var(--white);
 
     border-radius: 50%;
 
@@ -752,7 +825,7 @@ button:hover {
 
     margin-bottom: 12px;
 
-    color: #0b3d20;
+    color: var(--deep-green);
 
     font-size: 1.2rem;
 }
@@ -765,7 +838,7 @@ button:hover {
 .step-card p {
     margin: 0;
 
-    color: #555555;
+    color: var(--muted-text);
 
     font-size: 0.95rem;
 
@@ -841,7 +914,7 @@ button:hover {
         0
         10px;
 
-    color: #0b3d20;
+    color: var(--deep-green);
 
     font-size: 1.2rem;
 }
@@ -852,7 +925,7 @@ button:hover {
 .trust-card p {
     margin: 0;
 
-    color: #555555;
+    color: var(--muted-text);
 
     font-size: 0.95rem;
 }
@@ -865,13 +938,13 @@ button:hover {
     background:
         linear-gradient(
             135deg,
-            #f4faf6,
-            #ffffff
+            var(--light-green-bg),
+            var(--white)
         );
 
     border:
         1px solid
-        #dce9df;
+        var(--light-border);
 }
 
 
@@ -891,7 +964,7 @@ button:hover {
 .quote-label {
     margin-bottom: 5px;
 
-    color: #087a36;
+    color: var(--green);
 
     font-size: 0.85rem;
 
@@ -905,7 +978,7 @@ button:hover {
 }
 
 .quote-intro {
-    color: #555555;
+    color: var(--muted-text);
 
     margin:
         0
@@ -951,7 +1024,7 @@ button:hover {
 .form-group textarea:focus {
     outline: none;
 
-    border-color: #087a36;
+    border-color: var(--green);
 
     box-shadow:
         0 0 0 3px
@@ -966,7 +1039,7 @@ button:hover {
 .quote-submit-button {
     width: 100%;
 
-    background-color: #087a36;
+    background-color: var(--green);
 
     font-size: 1.05rem;
 
@@ -974,7 +1047,7 @@ button:hover {
 }
 
 .quote-submit-button:hover {
-    background-color: #062e18;
+    background-color: var(--dark-green);
 }
 
 
@@ -1023,7 +1096,7 @@ button:hover {
 
     height: 2px;
 
-    background-color: white;
+    background-color: var(--white);
 
     border-radius: 2px;
 
@@ -1073,7 +1146,7 @@ span:nth-child(3) {
 
 
 .section-label {
-    color: #087a36;
+    color: var(--green);
 
     font-size: 0.85rem;
 
@@ -1093,7 +1166,7 @@ span:nth-child(3) {
         auto
         30px;
 
-    color: #555555;
+    color: var(--muted-text);
 }
 
 
@@ -1114,17 +1187,17 @@ span:nth-child(3) {
 
 
 .service-area-item {
-    background-color: #f4faf6;
+    background-color: var(--light-green-bg);
 
     border:
         1px solid
-        #dce9df;
+        var(--light-border);
 
     border-radius: 8px;
 
     padding: 14px;
 
-    color: #0b3d20;
+    color: var(--deep-green);
 
     font-weight: bold;
 }
@@ -1180,7 +1253,7 @@ span:nth-child(3) {
     }
 
     .quote-intro {
-        color: #555555;
+        color: var(--muted-text);
 
         margin-bottom: 20px;
     }
