@@ -32,3 +32,41 @@ Problem: ${problem}
     window.location.href = smsLink;
 
 });
+
+const menuToggle =
+    document.querySelector("#menu-toggle");
+
+const navLinks =
+    document.querySelector("#nav-links");
+
+
+menuToggle.addEventListener("click", function() {
+
+    const menuIsOpen =
+        navLinks.classList.toggle("active");
+
+    menuToggle.setAttribute(
+        "aria-expanded",
+        menuIsOpen
+    );
+
+});
+
+const navItems =
+    navLinks.querySelectorAll("a");
+
+
+navItems.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navLinks.classList.remove("active");
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    });
+
+});
