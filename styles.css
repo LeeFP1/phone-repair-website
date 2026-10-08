@@ -1212,6 +1212,218 @@ span:nth-child(3) {
 }
 
 /* ------------------------------
+   CONVENIENCE BANNER
+------------------------------ */
+
+.convenience-banner {
+    max-width: 1100px;
+
+    margin:
+        0
+        auto
+        30px;
+
+    padding: 28px 32px;
+
+    background-color: var(--dark-green);
+
+    color: var(--white);
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+.convenience-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: var(--bright-green);
+
+    color: var(--dark-green);
+
+    border-radius: 50%;
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+}
+
+
+.convenience-text {
+    flex: 1;
+}
+
+
+.convenience-text h2 {
+    margin:
+        0
+        0
+        5px;
+
+    color: var(--white);
+
+    font-size: 1.3rem;
+}
+
+
+.convenience-text p {
+    margin: 0;
+
+    color: #dce8df;
+}
+
+/* ------------------------------
+   POPULAR REPAIRS
+------------------------------ */
+
+.repairs-section {
+    text-align: center;
+}
+
+
+.repair-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+
+.repair-card {
+    background-color: var(--white);
+
+    border:
+        1px solid
+        var(--light-border);
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    text-align: left;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.repair-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+.repair-card h3 {
+    margin:
+        0
+        0
+        10px;
+
+    color: var(--deep-green);
+
+    font-size: 1.25rem;
+}
+
+
+.repair-card p {
+    color: var(--muted-text);
+
+    margin:
+        0
+        0
+        20px;
+}
+
+
+/* PRICE / QUOTE LABEL */
+
+.repair-price {
+    display: inline-block;
+
+    margin-top: auto;
+
+    margin-bottom: 15px;
+
+    color: var(--green);
+
+    font-weight: bold;
+
+    font-size: 0.9rem;
+}
+
+
+/* REPAIR LINK */
+
+.repair-link {
+    color: var(--green);
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.repair-link:hover {
+    text-decoration: underline;
+}
+
+.service-description {
+    color: var(--muted-text);
+
+    margin-bottom: 20px;
+}
+
+.parts-note {
+    max-width: 750px;
+
+    margin:
+        30px
+        auto
+        0;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid
+        var(--light-border);
+
+    color: #666666;
+
+    font-size: 0.9rem;
+}
+
+/* ------------------------------
    Tablet DESIGN
 ------------------------------ */
 
@@ -1230,6 +1442,11 @@ span:nth-child(3) {
     .footer-content {
         grid-template-columns:
             repeat(2, 1fr);
+    }
+
+    .repair-grid {
+        grid-template-columns:
+        repeat(2, 1fr);
     }
 
 }
@@ -1411,6 +1628,32 @@ span:nth-child(3) {
 
     .footer-content {
         grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .repair-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .convenience-banner {
+        flex-direction: column;
+
+        text-align: center;
+
+        margin:
+            0
+            12px
+            30px;
+
+        padding:
+            28px
+            22px;
+    }
+
+
+    .convenience-banner .button {
+        width: 100%;
 
         text-align: center;
     }
